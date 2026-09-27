@@ -203,19 +203,14 @@ export default function Home() {
 
           <div className="converter-card" id="converter">
             <div className="converter-card-inner">
-              <div className="ai-tabs" role="tablist" aria-label="AI source">
-                <button className="ai-tab active" data-ai="chatgpt" role="tab">ChatGPT</button>
-                <button className="ai-tab" data-ai="claude" role="tab">Claude</button>
-                <button className="ai-tab" data-ai="gemini" role="tab">Gemini</button>
-                <button className="ai-tab" data-ai="other" role="tab">Other AI</button>
-              </div>
+
               <label className="input-label" htmlFor="chat-input">Paste chat share link</label>
               <div className="textarea-wrapper">
                 <textarea 
                   id="chat-input" 
                   rows="6" 
                   spellCheck="false" 
-                  placeholder="You: Hello&#10;ChatGPT: Hi! How can I help?&#10;&#10;Paste conversation text here, or use the bookmarklet below to auto-extract from ChatGPT."
+                  placeholder="https://chatgpt.com/share/..."
                   value={inputVal}
                   onChange={handleInput}
                 ></textarea>
@@ -228,8 +223,7 @@ export default function Home() {
               {error && <div style={{color: '#ff4d85', fontSize: '0.85rem', marginTop: '8px', marginBottom: '8px'}}>{error}</div>}
 
               <div className="url-strip" id="url-strip">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: '0', marginTop: '1px' }}><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <span id="url-strip-msg">Paste conversation text above, or <a href="#bookmarklet" className="url-strip-link">install the bookmarklet</a> for one-click extraction from ChatGPT.</span>
+                <span id="url-strip-msg">Paste a ChatGPT share link above to instantly convert your conversation.</span>
               </div>
               <div className="options-row">
                 <div className="option-group">
