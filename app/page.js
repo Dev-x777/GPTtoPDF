@@ -90,7 +90,7 @@ export default function Home() {
     let parsed = [];
     if (isUrl) {
       try {
-        const res = await fetch(`/api/fetch-chat?url=${encodeURIComponent(inputVal)}`);
+        const res = await fetch(`/api/fetch-chat?url=${encodeURIComponent(inputVal)}&t=${Date.now()}`);
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         parsed = parseText(data.text);
