@@ -209,7 +209,7 @@ export default function Home() {
                 <button className="ai-tab" data-ai="gemini" role="tab">Gemini</button>
                 <button className="ai-tab" data-ai="other" role="tab">Other AI</button>
               </div>
-              <label className="input-label" htmlFor="chat-input">Paste conversation text</label>
+              <label className="input-label" htmlFor="chat-input">Paste chat share link</label>
               <div className="textarea-wrapper">
                 <textarea 
                   id="chat-input" 

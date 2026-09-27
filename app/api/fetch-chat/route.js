@@ -46,23 +46,18 @@ export async function GET(request) {
     const shareId = shareIdMatch[1];
     const backendApiUrl = `https://chatgpt.com/backend-api/share/${shareId}`;
 
-    // Dynamically import gotScraping
-    const { gotScraping } = await import('got-scraping');
-    
-    const response = await gotScraping({
-      url: backendApiUrl,
-      headerGeneratorOptions: {
-        browsers: [{name: 'chrome', minVersion: 120, maxVersion: 121}],
-        devices: ['desktop'],
-        operatingSystems: ['windows']
+    const response = await fetch(backendApiUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+        'Accept': 'application/json'
       }
     });
 
-    if (response.statusCode !== 200) {
-      throw new Error(`Failed to fetch from ChatGPT: HTTP ${response.statusCode}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch from ChatGPT: HTTP ${response.status}`);
     }
 
-    const data = JSON.parse(response.body);
+    const data = await response.json();
     if (!data.mapping) {
       throw new Error('Invalid JSON format from ChatGPT (missing mapping)');
     }
