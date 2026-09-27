@@ -18,7 +18,7 @@ function extractFromMapping(mapping) {
       if (parts && (role === 'user' || role === 'assistant')) {
         const text = parts.filter(p => typeof p === 'string').join('\n').trim();
         if (text) {
-          messages.push((role === 'user' ? 'You: ' : 'ChatGPT: ') + text);
+          messages.push((role === 'user' ? 'You\n' : 'ChatGPT\n') + text);
         }
       }
     }
