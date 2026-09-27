@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatExport Pro — AI Chat to PDF Converter</title>
+  <meta name="description" content="Convert ChatGPT, Claude, Gemini conversations to beautiful PDFs, Word docs, or Markdown. Live preview, dark mode, custom themes, table of contents — free, no login." />
+  <meta property="og:title" content="ChatExport Pro — AI Chat to PDF Converter" />
+  <meta property="og:description" content="The most powerful AI chat export tool. Paste any ChatGPT, Claude or Gemini conversation and download a beautifully formatted PDF in seconds." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://unpkg.com/html-docx-js/dist/html-docx.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header" id="top">
+  <div class="container header-inner">
+    <a href="#" class="logo" id="logo-link">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z"/><path d="M14 2v6h6"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+      </div>
+      <span class="logo-text">ChatExport <span class="logo-accent">Pro</span></span>
+    </a>
+    <nav class="nav" id="main-nav">
+      <a href="#converter" class="nav-link">Convert</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#converter" class="btn btn-primary btn-sm">Convert Now</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+        Free &bull; No login &bull; Multi-format export
+      </div>
+      <h1 class="hero-title">Export AI chats to <span class="gradient-text">beautiful documents</span></h1>
+      <p class="hero-subtitle">Convert ChatGPT, Claude, Gemini and any AI conversation into stunning PDFs, Word docs, or Markdown. Live preview, custom themes, table of contents — all in your browser.</p>
+      <ul class="hero-features">
+        <li><span class="check-icon">&#10003;</span> ChatGPT, Claude &amp; Gemini</li>
+        <li><span class="check-icon">&#10003;</span> PDF, DOCX &amp; Markdown export</li>
+        <li><span class="check-icon">&#10003;</span> Live preview before download</li>
+        <li><span class="check-icon">&#10003;</span> Custom themes &amp; fonts</li>
+        <li><span class="check-icon">&#10003;</span> Auto table of contents</li>
+        <li><span class="check-icon">&#10003;</span> 100% private, browser-only</li>
+      </ul>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">5+</span><span class="stat-label">Export formats</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">0s</span><span class="stat-label">No wait time</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">&#8734;</span><span class="stat-label">Free conversions</span></div>
+      </div>
+    </div>
+
+    <div class="converter-card" id="converter">
+      <div class="converter-card-inner">
+        <div class="ai-tabs" role="tablist" aria-label="AI source">
+          <button class="ai-tab active" data-ai="chatgpt" role="tab">ChatGPT</button>
+          <button class="ai-tab" data-ai="claude" role="tab">Claude</button>
+          <button class="ai-tab" data-ai="gemini" role="tab">Gemini</button>
+          <button class="ai-tab" data-ai="other" role="tab">Other AI</button>
+        </div>
+        <label class="input-label" for="chat-input">Paste conversation text</label>
+        <div class="textarea-wrapper">
+          <textarea id="chat-input" rows="6" spellcheck="false" placeholder="You: Hello&#10;ChatGPT: Hi! How can I help?&#10;&#10;Paste conversation text here, or use the bookmarklet below to auto-extract from ChatGPT."></textarea>
+          <button class="paste-btn" id="paste-btn" title="Paste from clipboard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M17 4h1a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1"/></svg>
+            Paste
+          </button>
+        </div>
+        <div class="url-strip" id="url-strip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span id="url-strip-msg">Paste conversation text above, or <a href="#bookmarklet" class="url-strip-link">install the bookmarklet</a> for one-click extraction from ChatGPT.</span>
+        </div>
+        <div class="options-row">
+          <div class="option-group">
+            <label class="option-label" for="export-format">Format</label>
+            <select id="export-format" class="option-select">
+              <option value="pdf">PDF</option>
+              <option value="markdown">Markdown (.md)</option>
+              <option value="html">HTML</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label class="option-label" for="pdf-theme">Theme</label>
+            <select id="pdf-theme" class="option-select">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="sepia">Sepia</option>
+              <option value="minimal">Minimal</option>
+            </select>
+          </div>
+          <div class="option-group">
+            <label class="option-label" for="page-size">Page size</label>
+            <select id="page-size" class="option-select">
+              <option value="a4">A4</option>
+              <option value="letter">Letter</option>
+              <option value="legal">Legal</option>
+            </select>
+          </div>
+        </div>
+        <div class="toggles-row">
+          <label class="toggle-label" for="toggle-toc">
+            <input type="checkbox" id="toggle-toc" class="toggle-input" checked />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span>Table of contents</span>
+          </label>
+          <label class="toggle-label" for="toggle-timestamps">
+            <input type="checkbox" id="toggle-timestamps" class="toggle-input" />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span>Timestamps</span>
+          </label>
+          <label class="toggle-label" for="toggle-stats">
+            <input type="checkbox" id="toggle-stats" class="toggle-input" checked />
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span>Chat stats</span>
+          </label>
+        </div>
+        <div class="converter-actions">
+          <button class="btn btn-ghost btn-sm" id="preview-btn" disabled>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Preview
+          </button>
+          <button class="btn btn-ghost btn-sm" id="clear-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+            Clear
+          </button>
+          <button class="btn btn-primary" id="generate-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Generate
+          </button>
+        </div>
+        <div class="stats-bar hidden" id="stats-bar">
+          <div class="stat-chip" id="stat-messages"><span>0 messages</span></div>
+          <div class="stat-chip" id="stat-words"><span>0 words</span></div>
+          <div class="stat-chip" id="stat-tokens"><span>~0 tokens</span></div>
+        </div>
+        <div class="progress-wrap hidden" id="progress-wrap">
+          <div class="progress-bar-track"><div class="progress-bar" id="progress-bar"></div></div>
+          <span class="progress-label" id="progress-label">Processing...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="modal-backdrop hidden" id="preview-modal" role="dialog" aria-modal="true" aria-label="Document preview">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Live Preview</span>
+      <div class="modal-actions">
+        <button class="btn btn-primary btn-sm" id="modal-download-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </button>
+        <button class="modal-close" id="modal-close" aria-label="Close preview">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body" id="preview-content"></div>
+  </div>
+</div>
+
+<section class="section" id="features">
+  <div class="container">
+    <p class="section-eyebrow">Why choose us</p>
+    <h2 class="section-title">Everything the original is missing</h2>
+    <p class="section-subtitle">We took the concept and dramatically improved it.</p>
+    <div class="features-grid">
+      <div class="feature-card feature-card--large">
+        <div class="feature-icon feature-icon--purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <h3>Live Preview</h3>
+        <p>See exactly how your document looks before downloading. Scroll through the full formatted output in a sleek full-screen modal — tweak settings and regenerate instantly.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3>Multi-format export</h3>
+        <p>PDF, Markdown, and HTML — pick what fits your workflow.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
+        <h3>Custom PDF themes</h3>
+        <p>Light, Dark, Sepia, or Minimal themes for your exported document.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></div>
+        <h3>Table of contents</h3>
+        <p>Auto-generated TOC from conversation headings. Navigate long chats instantly.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--pink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Multi-AI support</h3>
+        <p>ChatGPT, Claude, Gemini, and any raw paste — we detect the format automatically.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Chat statistics</h3>
+        <p>Word count, message count, and token estimate displayed before you export.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--indigo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Dark / Light mode</h3>
+        <p>Full dark mode on the website itself, with smooth animated transition.</p>
+        <div class="feature-tag">New</div>
+      </div>
+      <div class="feature-card feature-card--large">
+        <div class="feature-icon feature-icon--purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Beautiful code blocks</h3>
+        <p>Monospaced, boxed code sections with language labels. Never clipped at page edges. Long lines wrap gracefully with smart indentation preserved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <p class="section-eyebrow">Comparison</p>
+    <h2 class="section-title">ChatExport Pro vs. the rest</h2>
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-us">ChatExport Pro</th>
+            <th>Other converters</th>
+            <th>Browser print</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Live preview</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-no">No</span></td><td><span class="badge-no">No</span></td></tr>
+          <tr><td>Markdown / HTML export</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-no">No</span></td><td><span class="badge-no">No</span></td></tr>
+          <tr><td>PDF themes (dark, sepia...)</td><td class="col-us"><span class="badge-yes">4 themes</span></td><td><span class="badge-no">No</span></td><td><span class="badge-no">No</span></td></tr>
+          <tr><td>Table of contents</td><td class="col-us"><span class="badge-yes">Auto</span></td><td><span class="badge-no">No</span></td><td><span class="badge-no">No</span></td></tr>
+          <tr><td>Chat statistics</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-no">No</span></td><td><span class="badge-no">No</span></td></tr>
+          <tr><td>Multi-AI (Claude, Gemini)</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-partial">Partial</span></td><td><span class="badge-no">No</span></td></tr>
+          <tr><td>Code blocks</td><td class="col-us"><span class="badge-yes">Boxed</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-no">Cut off</span></td></tr>
+          <tr><td>Tables preserved</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-no">Squashed</span></td></tr>
+          <tr><td>Mobile friendly</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-partial">Varies</span></td><td><span class="badge-no">Poor</span></td></tr>
+          <tr><td>No login required</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Yes</span></td></tr>
+          <tr><td>100% private (browser-only)</td><td class="col-us"><span class="badge-yes">Yes</span></td><td><span class="badge-partial">Varies</span></td><td><span class="badge-yes">Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="container">
+    <p class="section-eyebrow">Process</p>
+    <h2 class="section-title">Three steps. Seconds.</h2>
+    <p class="section-subtitle">From chat to polished document faster than you can open a print dialog.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <h3>Paste link or text</h3>
+        <p>Grab your ChatGPT share URL, or copy-paste the full conversation from ChatGPT, Claude, Gemini or any AI tool.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true"><svg width="40" height="16" viewBox="0 0 40 16" fill="none"><path d="M0 8h32M27 3l10 5-10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>Choose your settings</h3>
+        <p>Pick PDF, Markdown or HTML. Select a theme. Toggle table of contents, timestamps, and stats on or off.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true"><svg width="40" height="16" viewBox="0 0 40 16" fill="none"><path d="M0 8h32M27 3l10 5-10 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+        <h3>Preview &amp; download</h3>
+        <p>Preview the full document in-browser, then download your perfectly formatted file with one click.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <p class="section-eyebrow">Who uses it</p>
+    <h2 class="section-title">Built for every kind of AI power user</h2>
+    <div class="usecases-grid">
+      <div class="usecase-card"><span class="usecase-emoji">&#127891;</span><h3>Students</h3><p>Archive tutoring threads, essay feedback and revision summaries as tidy handouts.</p></div>
+      <div class="usecase-card"><span class="usecase-emoji">&#128187;</span><h3>Developers</h3><p>Keep debugging sessions with perfectly formatted code that never gets clipped at page edges.</p></div>
+      <div class="usecase-card"><span class="usecase-emoji">&#128300;</span><h3>Researchers</h3><p>Turn sprawling exploratory chats into citable, page-numbered reference documents with auto-TOC.</p></div>
+      <div class="usecase-card"><span class="usecase-emoji">&#128188;</span><h3>Consultants</h3><p>Hand clients a polished deliverable instead of a screenshot roll or an expiring share link.</p></div>
+      <div class="usecase-card"><span class="usecase-emoji">&#9997;&#65039;</span><h3>Writers</h3><p>Save drafts, outlines and edits offline so nothing depends on a live share URL.</p></div>
+      <div class="usecase-card"><span class="usecase-emoji">&#128101;</span><h3>Teams</h3><p>Circulate one consistent format — PDF for delivery or Markdown for collaborative editing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-eyebrow">Privacy first</p>
+    <h2 class="section-title">Your conversations stay yours</h2>
+    <div class="privacy-grid">
+      <div class="privacy-card"><div class="privacy-icon">&#128274;</div><h3>Nothing stored</h3><p>All processing happens in your browser. No text ever leaves your device. Zero server-side storage.</p></div>
+      <div class="privacy-card"><div class="privacy-icon">&#128683;</div><h3>No permissions</h3><p>No clipboard access required, no account, no extension. Just paste and go.</p></div>
+      <div class="privacy-card"><div class="privacy-icon">&#128193;</div><h3>You own the file</h3><p>The document is generated entirely in your browser and saved directly to your device.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <p class="section-eyebrow">Support</p>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">How do I export a ChatGPT conversation to PDF?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">Open the chat, hit Share to get a public URL, paste it in the converter above, choose PDF, and click Generate. The file downloads straight to your device. You can also paste raw conversation text directly.</div></details>
+      <details class="faq-item"><summary class="faq-q">Which AI chatbots are supported?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">ChatGPT share links, Claude conversations, Gemini chats, and raw pasted text from any AI chatbot. The tool auto-detects "Human/Assistant", "You/ChatGPT", and similar speaker patterns.</div></details>
+      <details class="faq-item"><summary class="faq-q">What export formats are available?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">PDF (with Light, Dark, Sepia, or Minimal themes), Markdown (.md), and HTML. All formats preserve code blocks, tables, lists, and headings.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is this free and unlimited?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">Yes — completely free and unlimited. Export as many chats as you like in any format, with no hidden limits.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is my conversation data stored anywhere?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">No. All conversion happens locally in your browser. No data is sent to any server. Nothing is stored, logged, or analyzed — ever.</div></details>
+      <details class="faq-item"><summary class="faq-q">Does it work on mobile?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">Yes. The site is fully mobile-responsive. You can paste a link and download the PDF from any phone browser without installing anything.</div></details>
+      <details class="faq-item"><summary class="faq-q">What is the table of contents feature?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">When enabled, the tool scans your conversation for headings (markdown # H1, ## H2 etc.) and generates a table of contents at the top of the document. Ideal for long research conversations.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I preview before downloading?<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="faq-a">Yes! Click the Preview button after pasting your content. A full-screen modal shows the formatted document exactly as it will look in the exported file. You can download directly from the preview.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-orb" aria-hidden="true"></div>
+  <div class="container cta-inner">
+    <h2 class="cta-title">Ready to export your first chat?</h2>
+    <p class="cta-sub">No signup. No extension. Just paste and download.</p>
+    <a href="#converter" class="btn btn-primary btn-lg">Start converting for free</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z"/><path d="M14 2v6h6"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+        <span class="logo-text">ChatExport <span class="logo-accent">Pro</span></span>
+      </a>
+      <p class="footer-tagline">The most powerful AI chat export tool. Free, private, and built for everyone.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col"><h4>Product</h4><a href="#converter">Convert</a><a href="#features">Features</a><a href="#how-it-works">How it works</a></div>
+      <div class="footer-col"><h4>Formats</h4><a href="#converter">PDF</a><a href="#converter">Markdown</a><a href="#converter">HTML</a></div>
+      <div class="footer-col"><h4>Info</h4><a href="#faq">FAQ</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 ChatExport Pro. Not affiliated with OpenAI, Anthropic, or Google.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
