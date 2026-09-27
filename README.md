@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GPTtoPDF
+
+GPTtoPDF is a web application built with [Next.js](https://nextjs.org/) that allows you to seamlessly fetch, parse, and export ChatGPT conversation links into beautifully formatted PDF or DOCX documents. 
+
+## Features
+
+- **Link Parsing**: Simply paste a public ChatGPT link and the app automatically fetches the conversation.
+- **Export to PDF**: Generate clean, printable PDF documents of your chats.
+- **Export to Word (DOCX)**: Download your conversations as editable Word documents.
+- **Markdown Support**: Preserves code blocks, bold text, lists, and other markdown formatting from the original chat.
+- **Modern UI**: A sleek, responsive interface built with Tailwind CSS v4 and Lucide React icons.
+
+## Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Library:** [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Markdown Parsing:** [Marked](https://marked.js.org/)
+- **Document Export:** [html2pdf.js](https://ekoopmans.github.io/html2pdf.js/) & [html-docx-js](https://github.com/evidenceprime/html-docx-js)
+- **Data Fetching:** [got-scraping](https://github.com/apify/got-scraping)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Make sure you have Node.js (v18+) and npm installed on your machine.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Dev-x777/GPTtoPDF.git
+   cd GPTtoPDF
+   ```
 
-## Learn More
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This project is fully optimized and ready to be deployed on Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to a Git repository (GitHub, GitLab, etc.).
+2. Import the project into [Vercel](https://vercel.com/).
+3. Vercel will automatically detect the Next.js framework and configure the build settings.
+4. Click **Deploy**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
